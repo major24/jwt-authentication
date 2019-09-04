@@ -1,0 +1,32 @@
+﻿
+
+JWT token web api app
+Simple jwt token generation and using the token to retrieve the data via an api end point
+
+
+build and run the app
+should be able to access the app via postman
+
+open postman
+1) 
+POST 
+call to get the token at http://localhost:5000/api/auth/token
+body is send as application/json
+
+{
+	"Id": 24,
+	"FirstName": "Major",
+	"LastName": "Nalliah",
+	"UserName": "test",
+	"Password": "test"
+}
+headers should contain 'Accept' and 'Content-Type', application/json
+Upon successful, should get token
+
+2)
+GET call
+Open another tab in postman to query hr data
+copy the token 'Authorization' = 'Bearer ej.....token....
+Add 'Accept' and 'Content-Type' as headers as well
+Upon running, should retrive the data (1 min expiry is set)
+
